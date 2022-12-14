@@ -39,7 +39,7 @@ body {
 }
 .pageHeader {
   height: 85vh;
-  background-image: url("./assets/header.jpg");
+  background-image: url("./assets/header1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -49,7 +49,8 @@ body {
   justify-content: center;
 }
 .pageHeader__header {
-  text-shadow: 1px 1px 1px whitesmoke;
+  text-shadow: 1px 1px 1px rgb(220, 220, 220);
+  color: whitesmoke;
 }
 
 .mainContent {
