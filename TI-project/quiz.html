@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navigation">
+        <ul class="menu navigation__menu">
+            <li class="manu__item"><a class="menu__link" href="./index.html">Main page</a></li>
+            <li class="manu__item"><a class="menu__link" href="./hall-of-fame.html">Hall of fame</a></li>
+            <li class="manu__item"><a class="menu__link menu__link--active" href="./#">Qauiz</a></li>
+        </ul>
+  </nav>
+  <header class="pageHeader"><h1 class="pageHeader__header">Quiz</h1></header>
+
+  <section class="questions-container" id="questions">
+
+  </section>
+  <div class="lds-roller" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+  <button class="button" id="answers">Check</button>
+  <button class="button" id="playAgain">New questions</button>
+
+  <div class="score">Your score: <span id="score"></span>/7</div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

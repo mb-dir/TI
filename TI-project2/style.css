@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+}
+
+.textarea {
+  display: block;
+  margin: 10px auto;
+  width: 450px;
+  height: 200px;
+  resize: none;
+}
