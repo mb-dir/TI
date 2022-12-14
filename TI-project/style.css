@@ -102,8 +102,10 @@ body {
 .questions-quntainer__questions-list {
   list-style: none;
   margin: 7px 0 12px;
+  padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   font-weight: 400;
 }
 
@@ -113,7 +115,8 @@ body {
 }
 
 .label {
-  margin-right: 15px;
+  margin: 3px 15px 0 0;
+  /* display: block; */
 }
 
 .button {
