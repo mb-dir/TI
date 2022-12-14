@@ -125,7 +125,9 @@ body {
   margin-bottom: 20px;
 }
 
-.buttons:hover {
+.button:hover,
+.label:hover,
+input:hover {
   cursor: pointer;
 }
 
