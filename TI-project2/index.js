@@ -3,7 +3,12 @@ const score = document.querySelector("#score");
 const scorePerSec = document.querySelector("#scorePerSec");
 const timer = document.querySelector("#timer");
 const startBtn = document.querySelector("#startBtn");
+const longest = document.querySelector("#longest");
+const shortest = document.querySelector("#shortest");
+
 let time = 10;
+
+let words = [];
 
 startBtn.addEventListener("click", () => {
   area.value = "";
@@ -18,6 +23,13 @@ startBtn.addEventListener("click", () => {
       startBtn.disabled = false;
       area.disabled = true;
       time = 10;
+      //sort words by its length
+      words.sort((a, b) => b.length - a.length);
+
+      //first index === longest word, last undex === shortest(after sorting)
+      longest.textContent = words[0];
+      shortest.textContent = words[words.length - 1];
+      words = [];
       clearInterval(interval);
     }
     timer.textContent = time;
@@ -26,7 +38,8 @@ startBtn.addEventListener("click", () => {
 
 area.addEventListener("input", () => {
   const trimmedValue = area.value.trim();
-  const wordsAmmount = trimmedValue.split(" ").length;
+  words = trimmedValue.split(" ");
+  const wordsAmmount = words.length;
   const wordsPerSec = (wordsAmmount / 10).toPrecision(3);
 
   score.textContent = wordsAmmount;
