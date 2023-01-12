@@ -3,6 +3,7 @@ const answerBtn = document.querySelector("#answers");
 const playAgainBtn = document.querySelector("#playAgain");
 const loader = document.querySelector("#loader");
 const score = document.querySelector("#score");
+const form = document.querySelector("#form");
 const correctAnswers = [];
 
 let correctAnswersNumber = 7;
@@ -44,6 +45,7 @@ const renderQuestionsContent = questionsList => {
       radio.value = answerContentWithInterpunction;
       radio.id = answerContentWithInterpunction;
       radio.name = questionHeader;
+      radio.required = true;
       const label = document.createElement("label");
       label.classList.add("label");
       label.setAttribute("for", answerContentWithInterpunction);
@@ -75,7 +77,9 @@ const getQuestions = async () => {
 
 getQuestions();
 
-answerBtn.addEventListener("click", () => {
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  answerBtn.disabled = true;
   const answersList = document.querySelectorAll(".radio-input");
   answersList.forEach(answer => {
     if (correctAnswers.findIndex(el => el === answer.value) !== -1) {
@@ -92,7 +96,9 @@ answerBtn.addEventListener("click", () => {
   score.textContent = correctAnswersNumber;
 });
 
-playAgainBtn.addEventListener("click", () => {
+playAgainBtn.addEventListener("click", e => {
+  e.preventDefault();
+  answerBtn.disabled = false;
   loader.style.display = "block";
   score.textContent = "";
   correctAnswersNumber = 7;
