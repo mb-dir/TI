@@ -27,7 +27,6 @@ startBtn.addEventListener("click", () => {
       time = 10;
       //sort words by its length
       words.sort((a, b) => b.length - a.length);
-
       //first index === longest word, last index === shortest(after sorting)
       longest.textContent = words[0];
       shortest.textContent = words[words.length - 1];
